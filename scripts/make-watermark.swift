@@ -8,9 +8,10 @@ let bitmap = NSBitmapImageRep(
   colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
 NSGraphicsContext.saveGraphicsState()
 NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: bitmap)
-NSColor.black.withAlphaComponent(0.55).setFill()
+// Cover legacy lettering when a previously watermarked rough cut is finished again.
+NSColor.black.setFill()
 NSBezierPath(roundedRect: NSRect(origin: .zero, size: size), xRadius: 12, yRadius: 12).fill()
-let text = "Created by YT AI Studio" as NSString
+let text = "Created by CoProd" as NSString
 let attributes: [NSAttributedString.Key: Any] = [
   .font: NSFont.systemFont(ofSize: 30, weight: .semibold),
   .foregroundColor: NSColor.white.withAlphaComponent(0.94),

@@ -13,7 +13,7 @@ assignees: ""
 Steps or commands that reproduce it, for example:
 
 ```sh
-bun run wts ...
+bun run cpd ...
 ```
 
 **Expected behavior** What you expected instead.
@@ -22,7 +22,7 @@ bun run wts ...
 
 - macOS version:
 - Bun / Node versions (`bun --version`, `node --version`):
-- Relevant tools (`bun run wts doctor` output):
+- Relevant tools (`bun run cpd doctor` output):
 
 **Additional context** Logs, job output, screenshots, or a minimal project that
 shows the problem. Do not paste API keys or other credentials.

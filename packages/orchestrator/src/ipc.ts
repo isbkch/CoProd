@@ -370,7 +370,7 @@ async function dispatch(
       return resolveCommand(
         "import",
         await safePath(store.dir(p), build.exportPath),
-        `WTS ${p.title.slice(0, 80)} v${build.planVersion} ${Date.now()}`,
+        `CoProd ${p.title.slice(0, 80)} v${build.planVersion} ${Date.now()}`,
       );
     }
     case "resolve.markers":

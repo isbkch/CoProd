@@ -88,7 +88,7 @@ At approval and immediately before upload, verify the selected revision belongs 
 | `Models.swift`, `StudioModel.swift`, `ReviewView.swift`, new `ThumbnailComparisonView.swift` | Codable thumbnail state, actions, compact cards, comparison/edit sheet, native preview/export, published read-only state.                              |
 | `youtube.ts`                                                                                 | Use its existing thumbnail argument; handle/confine thumbnail-specific completion reporting as needed.                                                 |
 
-Proposed domain operations: `thumbnails.get`, `thumbnails.render` (missing/current slots), `thumbnails.update` (save draft), `thumbnails.regenerate` (one slot), `thumbnails.select` (exact revision or null), and `thumbnails.export` (current pair). Rendering resumes missing work; regeneration deliberately requests a new background. IPC mutations carry the expected packaging version and slot revision so a stale sheet cannot overwrite newer work. Suggested CLI family: `wts thumbnails <project>` with `edit`, `regenerate`, `select`, and `export` subcommands.
+Proposed domain operations: `thumbnails.get`, `thumbnails.render` (missing/current slots), `thumbnails.update` (save draft), `thumbnails.regenerate` (one slot), `thumbnails.select` (exact revision or null), and `thumbnails.export` (current pair). Rendering resumes missing work; regeneration deliberately requests a new background. IPC mutations carry the expected packaging version and slot revision so a stale sheet cannot overwrite newer work. Suggested CLI family: `cpd thumbnails <project>` with `edit`, `regenerate`, `select`, and `export` subcommands.
 
 ## Delivery sequence and acceptance
 

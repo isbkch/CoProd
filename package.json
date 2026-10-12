@@ -1,5 +1,5 @@
 {
-  "name": "YouTube-AI-Studio",
+  "name": "coprod",
   "version": "0.7.1",
   "private": true,
   "type": "module",
@@ -24,7 +24,7 @@
     "esbuild"
   ],
   "scripts": {
-    "wts": "tsx packages/orchestrator/src/cli.ts",
+    "cpd": "tsx packages/orchestrator/src/cli.ts",
     "demo": "tsx scripts/demo.ts",
     "test": "tsx --test tests/*.test.ts",
     "test:integration": "tsx --test tests/*.integration.ts",

@@ -64,10 +64,10 @@ Reports separate word error rate (substitutions/deletions/insertions), median/p9
 ## CLI review
 
 ```sh
-bun run wts transcript review <project> --transcriber openai --recording <recording-id>
-bun run wts transcript decide <project> --file <decision.json>
-bun run wts transcript correct <project> --file <correction.json>
-bun run wts plan <project> --from-reviewed-transcripts
+bun run cpd transcript review <project> --transcriber openai --recording <recording-id>
+bun run cpd transcript decide <project> --file <decision.json>
+bun run cpd transcript correct <project> --file <correction.json>
+bun run cpd plan <project> --from-reviewed-transcripts
 ```
 
 A decision contains `reviewId`, `issueId`, `expectedHash` and `action` (`accept` or `keep`). A correction replaces `action` with the creator's exact `text`. The corresponding IPC methods are `transcript.review`, `transcript.decide`, `transcript.correct` and `transcript.history`; `plan.generate` accepts `fromReviewedTranscripts`.

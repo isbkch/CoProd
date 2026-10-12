@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 import { fileHash, StudioError } from "../../shared/src/index.ts";
 import { ffmpeg, inspect } from "./index.ts";
 
-export const FREE_WATERMARK_TEXT = "Created by YT AI Studio";
+export const FREE_WATERMARK_TEXT = "Created by CoProd";
 const overlay = fileURLToPath(
   new URL("../assets/free-watermark.png", import.meta.url),
 );

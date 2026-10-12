@@ -2256,7 +2256,7 @@ export class Studio {
               const result = await resolveCommand(
                 "render",
                 await safePath(dir, build.exportPath),
-                `WTS Final ${p.title.slice(0, 60)} ${plan.version} ${Date.now()}`,
+                `CoProd Final ${p.title.slice(0, 60)} ${plan.version} ${Date.now()}`,
                 output,
                 preset,
                 options.macroId,
@@ -2530,7 +2530,7 @@ export class Studio {
     // interrupt state this loop cannot step from. Recovering here (a live
     // owner's lock is still never bypassed — acquire throws) lets the next
     // advance rebuild from verified outputs instead of waiting for a manual
-    // `wts project recover`.
+    // `cpd project recover`.
     if (
       ["TRANSCRIBING", "PLANNING", "GENERATING_ASSETS", "ASSEMBLING"].includes(
         this.store.get(projectId).status,
@@ -2753,7 +2753,7 @@ export class Studio {
   }
   /**
    * Advance every autonomous project in the library once, sequentially — the
-   * one-command Producer pass for a channel in flight (`wts producer --all`).
+   * one-command Producer pass for a channel in flight (`cpd producer --all`).
    * Each project reports where it stopped; a project the Producer is already
    * running on reports `busy` and one project's failure never stops the rest.
    */

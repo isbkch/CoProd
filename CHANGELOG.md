@@ -1,8 +1,18 @@
 # Changelog
 
-Notable changes to YouTube-AI-Studio are documented here. Releases are
+Notable changes to CoProd are documented here. Releases are
 numbered from `package.json`; while pre-1.0, expect breaking changes between
 alphas without a major-version bump.
+
+## Unreleased
+
+- Renamed the free app to **CoProd**, including the window, sidebar, app bundle,
+  exported timeline labels, and the persistent **Created by CoProd** watermark.
+- Renamed the production CLI from `wts` to `cpd`; use `bun run cpd --help`.
+- Premium upgrade links now point to <https://coprod.app/>.
+- Existing library paths, settings, Keychain credentials, bundle identity,
+  and runtime configuration remain compatible. Earlier entries below retain
+  the names and commands used when those releases shipped.
 
 ## [0.7.1] — 2026-09-18
 

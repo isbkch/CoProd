@@ -82,61 +82,61 @@ const autonomyArg = (
     );
   return (value as "supervised" | "autonomous") ?? "supervised";
 };
-const help = `YouTube-AI-Studio — local production CLI
+const help = `CoProd — local production CLI
 
-bun run wts doctor
-bun run wts project create "Title" --duration 900 --description "Idea" [--autonomy supervised|autonomous]
-bun run wts project list | project inspect <project> | project recover <project>
-bun run wts costs <project>   (estimated API spend: this project and the whole library)
-bun run wts project delete <project> --yes   (files you imported from stay untouched)
-bun run wts autonomy <project> supervised|autonomous   (who satisfies the machine gates)
-bun run wts producer <project>   (autonomous projects: advance machine gates to the next stop; script and publication stay human)
-bun run wts producer --all   (one Producer pass over every autonomous project; crashed projects self-recover first)
-bun run wts rerecord <project>   (the pickup list: omitted sentences with context — record, import, transcribe, re-plan)
-bun run wts research <project> [--provider openai]
-bun run wts narrative <project> [--provider openai]
-bun run wts script draft <project> [--provider openai]
-bun run wts script import <project> <script.txt>
-bun run wts script approve <project> --version 1
-bun run wts previsualize <project> [--provider openai]
-bun run wts teleprompter <project>
-bun run wts packaging <project> [--provider openai]
-bun run wts packaging approve <project> --version 1
-bun run wts publish <project>
-bun run wts thumbnails <project> [--images mock|openai|gemini]   (render missing A/B)
-bun run wts thumbnails get <project>
-bun run wts thumbnails edit <project> A --headline "Headline" [--direction "Visual direction"] [--concept thumb-1]
-bun run wts thumbnails regenerate <project> B
-bun run wts thumbnails select <project> A --revision 1 | thumbnails select <project> none
-bun run wts thumbnails frames <project>   (expressive frames cut from the final render)
-bun run wts thumbnails frame <project> <A|B> <frame-id>   (compose a slot over an extracted frame)
-bun run wts thumbnails export <project> <absolute-destination-folder>
-bun run wts media inspect <file> | media import <project> <file>
-bun run wts transcript load <project> <transcript.json>
-bun run wts transcript fcp <project> <fcpbundle-or-folder>
-bun run wts transcript review <project> --transcriber openai [--recording <id>]
-bun run wts transcript decide <project> --file <decision.json>
-bun run wts transcribe <project> [--transcriber whisper|openai]
-bun run wts align <project>
-bun run wts aroll <project> [--director purist|craftsman] [--tightening natural|tight|punchy]
-bun run wts plan <project> [--provider openai] [--director purist|craftsman] [--density minimal|balanced|rich] [--tightening natural|tight|punchy] [--lead none|subtle|flowing]
+bun run cpd doctor
+bun run cpd project create "Title" --duration 900 --description "Idea" [--autonomy supervised|autonomous]
+bun run cpd project list | project inspect <project> | project recover <project>
+bun run cpd costs <project>   (estimated API spend: this project and the whole library)
+bun run cpd project delete <project> --yes   (files you imported from stay untouched)
+bun run cpd autonomy <project> supervised|autonomous   (who satisfies the machine gates)
+bun run cpd producer <project>   (autonomous projects: advance machine gates to the next stop; script and publication stay human)
+bun run cpd producer --all   (one Producer pass over every autonomous project; crashed projects self-recover first)
+bun run cpd rerecord <project>   (the pickup list: omitted sentences with context — record, import, transcribe, re-plan)
+bun run cpd research <project> [--provider openai]
+bun run cpd narrative <project> [--provider openai]
+bun run cpd script draft <project> [--provider openai]
+bun run cpd script import <project> <script.txt>
+bun run cpd script approve <project> --version 1
+bun run cpd previsualize <project> [--provider openai]
+bun run cpd teleprompter <project>
+bun run cpd packaging <project> [--provider openai]
+bun run cpd packaging approve <project> --version 1
+bun run cpd publish <project>
+bun run cpd thumbnails <project> [--images mock|openai|gemini]   (render missing A/B)
+bun run cpd thumbnails get <project>
+bun run cpd thumbnails edit <project> A --headline "Headline" [--direction "Visual direction"] [--concept thumb-1]
+bun run cpd thumbnails regenerate <project> B
+bun run cpd thumbnails select <project> A --revision 1 | thumbnails select <project> none
+bun run cpd thumbnails frames <project>   (expressive frames cut from the final render)
+bun run cpd thumbnails frame <project> <A|B> <frame-id>   (compose a slot over an extracted frame)
+bun run cpd thumbnails export <project> <absolute-destination-folder>
+bun run cpd media inspect <file> | media import <project> <file>
+bun run cpd transcript load <project> <transcript.json>
+bun run cpd transcript fcp <project> <fcpbundle-or-folder>
+bun run cpd transcript review <project> --transcriber openai [--recording <id>]
+bun run cpd transcript decide <project> --file <decision.json>
+bun run cpd transcribe <project> [--transcriber whisper|openai]
+bun run cpd align <project>
+bun run cpd aroll <project> [--director purist|craftsman] [--tightening natural|tight|punchy]
+bun run cpd plan <project> [--provider openai] [--director purist|craftsman] [--density minimal|balanced|rich] [--tightening natural|tight|punchy] [--lead none|subtle|flowing]
                          (--director hires the persona that drives density, tightening, captions, audio polish and narration lead; the other flags override individual knobs)
-bun run wts plan import <project> <plan.json>
-bun run wts plan validate <project>
-bun run wts plan approve <project> --version 1
-bun run wts storyboard <project>
-bun run wts previews <project>   (render storyboard previews: graphics + 3D clips)
-bun run wts build <project> | render <project> | jobs <project>
-bun run wts revision propose <project> <scene-id> "Creative direction" [--provider openai]
-bun run wts revision range <project> 3:42-4:10 "illustrate the failover"
-bun run wts revision edit <project> <operations.json>
-bun run wts visuals propose <project> [--provider openai]
-bun run wts revision apply <project> <patch-id> | revision reject <project> <patch-id>
-bun run wts plan undo <project>
-bun run wts review approve <project> --version 1
-bun run wts final macros | final render <project> [--preset "H.264 Master"] [--macro CinematicGrade]
-bun run wts final deliver <project> <absolute.mp4|mov rendered in Resolve>
-bun run wts resolve probe | resolve import <absolute.fcpxml> "New project name" | resolve markers <project>
+bun run cpd plan import <project> <plan.json>
+bun run cpd plan validate <project>
+bun run cpd plan approve <project> --version 1
+bun run cpd storyboard <project>
+bun run cpd previews <project>   (render storyboard previews: graphics + 3D clips)
+bun run cpd build <project> | render <project> | jobs <project>
+bun run cpd revision propose <project> <scene-id> "Creative direction" [--provider openai]
+bun run cpd revision range <project> 3:42-4:10 "illustrate the failover"
+bun run cpd revision edit <project> <operations.json>
+bun run cpd visuals propose <project> [--provider openai]
+bun run cpd revision apply <project> <patch-id> | revision reject <project> <patch-id>
+bun run cpd plan undo <project>
+bun run cpd review approve <project> --version 1
+bun run cpd final macros | final render <project> [--preset "H.264 Master"] [--macro CinematicGrade]
+bun run cpd final deliver <project> <absolute.mp4|mov rendered in Resolve>
+bun run cpd resolve probe | resolve import <absolute.fcpxml> "New project name" | resolve markers <project>
 
 All approvals refer to an exact version. Publishing uploads through the local
 YouTube CLI (youtubeuploader; WTS_YOUTUBEUPLOADER_PATH / WTS_YOUTUBE_ARGS) only after packaging approval.
@@ -533,7 +533,7 @@ try {
     else
       throw new StudioError(
         "INVALID_INPUT",
-        "Unknown command. Run bun run wts --help.",
+        "Unknown command. Run bun run cpd --help.",
       );
     console.log(JSON.stringify(result, null, 2));
   }

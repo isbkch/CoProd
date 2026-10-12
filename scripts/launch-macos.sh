@@ -2,8 +2,8 @@
 set -euo pipefail
 WTS_REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 bash "$WTS_REPO_ROOT/scripts/build-macos.sh"
-if [ -d "/Applications/YouTube-AI-Studio.app" ]; then
-	open -n "/Applications/YouTube-AI-Studio.app" --args "$@"
+if [ -d "/Applications/CoProd.app" ]; then
+	open -n "/Applications/CoProd.app" --args "$@"
 else
-	open -n "$WTS_REPO_ROOT/dist/YouTube-AI-Studio.app" --args "$@"
+	open -n "$WTS_REPO_ROOT/dist/CoProd.app" --args "$@"
 fi

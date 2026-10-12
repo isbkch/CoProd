@@ -1,6 +1,6 @@
-# Contributing to YouTube-AI-Studio
+# Contributing to CoProd
 
-Thanks for your interest in improving YouTube-AI-Studio. This document covers
+Thanks for your interest in improving CoProd. This document covers
 setup, the checks your change must pass, and project-specific rules that keep
 the app and the CLI honest.
 
@@ -72,7 +72,7 @@ media handling, rendering, or the build graph.
 - Format with Prettier (`bun run format`); Swift is excluded and formatted via
   `bun run swift:format`.
 - Never commit `.env` files, credentials, API keys, or personal media. Run
-  `bun run wts doctor` when documenting tool-dependent behavior.
+  `bun run cpd doctor` when documenting tool-dependent behavior.
 - Keep commit messages descriptive; the history uses Conventional Commits
   style (`feat:`, `fix:`, `chore:`, …).
 

@@ -3,7 +3,7 @@
  * Milestone-2 Director pass over the real A-roll: builds a production plan
  * from the alignment + deterministic A-roll draft, then applies curated
  * editorial decisions with real graphic content (actual code, actual numbers
- * from the narration). Emits a plan JSON for `wts plan import`, which runs it
+ * from the narration). Emits a plan JSON for `cpd plan import`, which runs it
  * through the exact validation an in-app Director plan must pass.
  *
  * Usage: tsx scripts/direct-real.ts <project-id> <output.json>

@@ -209,7 +209,7 @@ export async function doctor(root = defaultRoot()) {
       status: "AVAILABLE",
       version,
       required: false,
-      guidance: `${scripting} FCPXML import works without scripting; "bun run wts resolve probe" tests the connection.`,
+      guidance: `${scripting} FCPXML import works without scripting; "bun run cpd resolve probe" tests the connection.`,
     });
   } catch {
     checks.push({

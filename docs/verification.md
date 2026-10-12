@@ -1,5 +1,7 @@
 # Verification — September 16, 2026
 
+This record preserves the names and commands used for the verification below. The app is now CoProd; use `bun run cpd` in place of the historical `bun run wts` commands.
+
 ## Automated checks
 
 | Check                           | Result                                                                           |

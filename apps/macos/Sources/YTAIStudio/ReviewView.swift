@@ -438,11 +438,11 @@ struct FreeEditionRenderNotice: View {
   var body: some View {
     VStack(alignment: .leading, spacing: 8) {
       Label("Free edition", systemImage: "info.circle").font(.headline)
-      Text("Rendered videos include “Created by YT AI Studio”.")
+      Text("Rendered videos include “Created by CoProd”.")
         .font(.caption).foregroundStyle(.secondary)
       Link(
-        "Get Premium for watermark-free videos",
-        destination: URL(string: "https://ytaistudio.app/")!
+        "Get CoProd Premium for watermark-free videos",
+        destination: URL(string: "https://coprod.app/")!
       )
       .font(.callout).foregroundStyle(Color.studioAccent)
     }.frame(maxWidth: .infinity, alignment: .leading).padding(16).studioCard(cornerRadius: 11)

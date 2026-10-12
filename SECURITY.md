@@ -1,6 +1,6 @@
 # Security Policy
 
-YouTube-AI-Studio is a local, creator-run application: SwiftUI talking to a
+CoProd is a local, creator-run application: SwiftUI talking to a
 private local runtime over stdio, with no web frontend, HTTP server, or cloud
 backend. Publishing goes through the local `youtubeuploader` CLI under an
 explicit creator approval, and the project never handles OAuth credentials

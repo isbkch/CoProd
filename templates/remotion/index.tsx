@@ -9,7 +9,7 @@ import {
 } from "remotion";
 
 /**
- * YouTube-AI-Studio Remotion primitives. One composition ("YTAIStudioVisual");
+ * CoProd Remotion primitives. One composition ("YTAIStudioVisual");
  * the template name selects the primitive. Designs are laid out in a
  * 1280×720 design space and scaled to the composition size, so text stays
  * crisp at 1080p and above.
@@ -1436,7 +1436,7 @@ export const Visual: React.FC<VisualProps> = (props) => {
             color: b.accent,
           }}
         >
-          YouTube-AI-Studio{" "}
+          CoProd{" "}
           <span style={{ color: b.foreground, opacity: 0.45 }}>
             {" "}
             / SYSTEM NOTES
