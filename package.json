@@ -44,12 +44,12 @@
     "transcription:benchmark": "tsx scripts/transcription-benchmark.ts"
   },
   "dependencies": {
-    "@remotion/bundler": "4.0.533",
-    "@remotion/renderer": "4.0.533",
+    "@remotion/bundler": "4.0.539",
+    "@remotion/renderer": "4.0.539",
     "openai": "7.45.1",
     "react": "19.3.1",
     "react-dom": "19.3.1",
-    "remotion": "4.0.533",
+    "remotion": "4.0.539",
     "zod": "^4.6.5"
   },
   "devDependencies": {
